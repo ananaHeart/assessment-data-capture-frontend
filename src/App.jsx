@@ -1,7 +1,7 @@
 // src/App.jsx
 // This is the complete and correct version.
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 import AppStartup from './AppStartup';
 import MainLayout from './layouts/MainLayout';
