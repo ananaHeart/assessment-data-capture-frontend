@@ -1,12 +1,11 @@
 // src/pages/RegisterPage.jsx
 import React, { useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 // --- NEW IMPORTS for the password toggle icon ---
 import { Container, Box, Typography, TextField, Button, Paper, Alert, Grid, Link, Select, MenuItem, InputLabel, FormControl, IconButton, InputAdornment } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 // ---------------------------------------------
-import { useNavigate } from 'react-router-dom';
 import authService from '../services/authService';
 
 function RegisterPage() {
