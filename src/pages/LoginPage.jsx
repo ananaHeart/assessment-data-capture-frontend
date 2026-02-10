@@ -1,7 +1,8 @@
 // src/pages/LoginPage.jsx
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 // --- NEW IMPORTS ---
-import { Container, Box, Typography, TextField, Button, Paper, Alert, IconButton, InputAdornment, Grid, Link } from '@mui/material';
+import { Container, Box, Typography, TextField, Button, Paper, Alert, IconButton, InputAdornment, Grid} from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 // --------------------
@@ -127,7 +128,7 @@ function LoginPage() {
           </Button>
            <Grid container>
             <Grid item>
-              <Link href="/register" variant="body2">
+              <Link to="/register" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
