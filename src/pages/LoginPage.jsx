@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 // --- NEW IMPORTS ---
-import { Container, Box, Typography, TextField, Button, Paper, Alert, IconButton, InputAdornment, Grid, Link} from '@mui/material';
+import { Container, Box, Typography, TextField, Button, Paper, Alert, IconButton, InputAdornment, Grid, Link } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 // --------------------
@@ -128,9 +128,9 @@ function LoginPage() {
           </Button>
            <Grid container>
             <Grid item>
-              <Link to="/register" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
+              <Link component={RouterLink} to="/register" variant="body2">
+  {"Don't have an account? Sign Up"}
+</Link>
             </Grid>
           </Grid>
         </Box>

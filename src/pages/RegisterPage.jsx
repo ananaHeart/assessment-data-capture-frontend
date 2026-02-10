@@ -1,5 +1,6 @@
 // src/pages/RegisterPage.jsx
 import React, { useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 // --- NEW IMPORTS for the password toggle icon ---
 import { Container, Box, Typography, TextField, Button, Paper, Alert, Grid, Link, Select, MenuItem, InputLabel, FormControl, IconButton, InputAdornment } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
@@ -123,9 +124,9 @@ function RegisterPage() {
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="/login" variant="body2">
-                Already have an account? Log in
-              </Link>
+              <Link component={RouterLink} to="/login" variant="body2">
+  Already have an account? Log in
+</Link>
             </Grid>
           </Grid>
         </Box>
