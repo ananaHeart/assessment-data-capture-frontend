@@ -1,6 +1,10 @@
 // src/services/principalService.js
 import api from './api';
 
+const getDashboardSummary = () => {
+  return api.get('/school/dashboard-summary');
+};
+
 const getAllTeachers = async () => {
   try {
     const token = localStorage.getItem('token');
@@ -70,6 +74,7 @@ const principalService = {
   deleteTeacher,
   approveTeacher, 
   updateTeacher,
+  getDashboardSummary,
 };
 
 export default principalService;

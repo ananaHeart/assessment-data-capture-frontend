@@ -1,9 +1,10 @@
 // src/services/authService.js
-import api from './api';
+import api from './api'; //
 
 const register = (userData) => {
   return api.post('/users/register', userData);
 };
+
 
 const login = async (email, password) => {
   try {
