@@ -1,37 +1,48 @@
-// src/services/teacherService.js
-import api from './api';
+import api from "./api";
+
+const getToken = () => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  return user?.token;
+};
 
 const getMyClasses = async () => {
-  try {
-    const token = localStorage.getItem('token');
-    if (!token) throw new Error('No authorization token found.');
+  const token = getToken();
 
-    const response = await api.get('/classes/my-classes', {
-      headers: { Authorization: `Bearer ${token}` }
-    });
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
+  const response = await api.get("/classes/my-classes", {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  });
+
+  return response.data;
 };
 
 const getStudentsByClass = async (classId) => {
-  try {
-    const token = localStorage.getItem('token');
-    if (!token) throw new Error('No authorization token found.');
+  const token = getToken();
 
-    const response = await api.get(`/enrollment/class/${classId}/students`, {
-      headers: { Authorization: `Bearer ${token}` }
-    });
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
+  const response = await api.get(`/classes/${classId}/students`, {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  });
+
+  return response.data;
 };
 
-const teacherService = {
+const getAssessmentsByClass = async (classId) => {
+  const token = getToken();
+
+  const response = await api.get(`/classes/${classId}/assessments`, {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  });
+
+  return response.data;
+};
+
+export default {
   getMyClasses,
   getStudentsByClass,
+  getAssessmentsByClass
 };
-
-export default teacherService;

@@ -48,7 +48,7 @@ function WelcomePage() {
             <SchoolIcon sx={{ fontSize: 60, color: 'primary.main', mb: 2 }} />
 
             <Typography component="h1" variant="h3" gutterBottom>
-              Welcome to Automated Assessment System
+              Welcome to SMART Assessment System
             </Typography>
 
             <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>

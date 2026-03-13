@@ -50,6 +50,16 @@ function LoginPage() {
 
       const data = await authService.login(email, password);
 
+       // SAVE USER + TOKEN
+  localStorage.setItem(
+    "user",
+    JSON.stringify({
+      ...data.user,
+      token: data.token
+    })
+  );
+
+
       const userRole = data.user.role;
 
       if (userRole === 'admin') {

@@ -1,8 +1,14 @@
 // src/services/principalService.js
 import api from './api';
 
-const getDashboardSummary = () => {
-  return api.get('/school/dashboard-summary');
+const getDashboardSummary = async () => {
+  const token = localStorage.getItem('token');
+
+  return api.get('/school/dashboard-summary', {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  });
 };
 
 const getAllTeachers = async () => {

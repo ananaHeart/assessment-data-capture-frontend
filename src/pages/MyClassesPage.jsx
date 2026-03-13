@@ -1,4 +1,5 @@
 // src/pages/MyClassesPage.jsx
+import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import teacherService from '../services/teacherService';
 import { Paper, Box, Typography, Grid, Card, CardContent, CardActionArea, CircularProgress, Alert, Button, List, ListItem, ListItemText } from '@mui/material'; // <-- Added List components
@@ -45,6 +46,8 @@ function MyClassesPage() {
     setError('');
   };
 
+  const navigate = useNavigate();
+
   if (loading) {
     return <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}><CircularProgress /></Box>;
   }
@@ -83,7 +86,7 @@ function MyClassesPage() {
           {classes.map((cls) => (
             <Grid item xs={12} sm={6} md={4} key={cls.class_id}>
               <Card>
-                <CardActionArea onClick={() => handleClassSelect(cls)}>
+                <CardActionArea onClick={() => navigate(`/teacher/classes/${cls.class_id}`)}>
                   <CardContent>
                     <Typography variant="h5" component="div">{cls.subject_name}</Typography>
                     <Typography color="text.secondary">{cls.grade_level_name} - {cls.section_name}</Typography>

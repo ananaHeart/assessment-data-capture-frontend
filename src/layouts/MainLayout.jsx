@@ -82,7 +82,7 @@ function MainLayout() {
         <Toolbar>
 
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            Automated Assessment System
+            SMART Assessment System
           </Typography>
 
           <Typography variant="body2" sx={{ mr: 2 }}>
